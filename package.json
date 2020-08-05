@@ -1,0 +1,27 @@
+{
+  "name": "homework-xsolla",
+  "version": "1.0.0",
+  "description": "1. [Node](https://nodejs.org/en/)\r 2. Npm (по-умолчанию ставится вместое с node)",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack --mode=production",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon --exec webpack-dev-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zweitesherz/homework-xsolla.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zweitesherz/homework-xsolla/issues"
+  },
+  "homepage": "https://github.com/zweitesherz/homework-xsolla#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.4",
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.0"
+  }
+}
