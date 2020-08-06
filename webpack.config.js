@@ -4,12 +4,13 @@ const MiniCssPlugin = require('mini-css-extract-plugin');
 
 
 
-module.exports = {
+module.exports = (env, argv) => ({
     entry: './src/index.jsx',
     output: {
         filename: "main.js",
         path: path.join(__dirname, 'dist')
     },
+    devtool: argv.mode === "production" ? 'source-map' : 'source-map',
     resolve: {
         extensions: ['.js', '.jsx']
     },
@@ -45,7 +46,8 @@ module.exports = {
                         options: {
                             modules: true
                         }
-                    }
+                    },
+                    'postcss-loader'
                 ]
             }
         ]
@@ -55,5 +57,5 @@ module.exports = {
         port:9000,
         contentBase:path.join(__dirname, 'dist')
     }
-}
+});
 
