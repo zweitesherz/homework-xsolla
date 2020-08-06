@@ -15,7 +15,7 @@ module.exports = (env, argv) => ({
         extensions: ['.js', '.jsx']
     },
     plugins: [
-        new MiniCssPlugin(),
+        new MiniCssPlugin({   filename: 'styles.css'}),
         new HtmlWebpackPlugin({
             template: './src/index.html'
             }
@@ -49,6 +49,37 @@ module.exports = (env, argv) => ({
                     },
                     'postcss-loader'
                 ]
+            },
+
+            {
+                test: /\.less$/,
+                exclude: /node_modules/,
+
+                use: [
+                        MiniCssPlugin.loader,
+                    {loader: "css-loader",
+                        options: {
+                        sourceMap: true
+                    }
+                    },
+
+                    {
+                        loader: "less-loader",
+                        options: {
+                            sourceMap: true
+                        },
+                    },
+                    {
+                        loader: "postcss-loader",
+                        options: {
+                            sourceMap: true,config: {path:'src/postcss.config.js'}
+                        },
+                    },
+                ],
+            },
+            {
+                test: /\.woff($|\?)|\.woff2($|\?)|\.ttf($|\?)|\.eot($|\?)|\.svg($|\?)/,
+                use: "url-loader"
             }
         ]
     },
