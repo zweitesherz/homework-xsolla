@@ -39,15 +39,15 @@ module.exports = (env, argv) => ({
             {
                 test: /\.css$/i,
                 use: [
+                    'style-loader',
                     MiniCssPlugin.loader,
-
                     {
-                        loader: "css-loader",
-                        options: {
-                            modules: true
-                        }
-                    },
-                    'postcss-loader'
+                        loader: 'css-loader',
+                        options: { sourceMap: true }
+                    }, {
+                        loader: 'postcss-loader',
+                        options: { sourceMap: true, config: { path: 'src/js/postcss.config.js' } }
+                    }
                 ]
             },
 
@@ -64,17 +64,19 @@ module.exports = (env, argv) => ({
                     },
 
                     {
+                        loader: "postcss-loader",
+                        options: {
+                            sourceMap: true, config: {path: 'src/postcss.config.js'}
+                        },
+                    },
+
+                    {
                         loader: "less-loader",
                         options: {
                             sourceMap: true
                         },
                     },
-                    {
-                        loader: "postcss-loader",
-                        options: {
-                            sourceMap: true,config: {path:'src/postcss.config.js'}
-                        },
-                    },
+
                 ],
             },
             {

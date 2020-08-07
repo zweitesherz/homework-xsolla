@@ -10,7 +10,7 @@ import stLess from './style.less'
 
 function App() {
 
-    return <div className={stLess.message}><img className={stLess.logo} alt="Xsolla" src={logoSrc}/>Hello Xsolla school!</div>
+    return <div className={stLess.message}><img className={stLess.logo} alt="Xsolla2" src={logoSrc}/>Hello Xsolla school!</div>
 }
 
 export default App;
