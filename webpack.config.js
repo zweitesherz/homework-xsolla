@@ -59,8 +59,9 @@ module.exports = (env, argv) => ({
                         MiniCssPlugin.loader,
                     {loader: "css-loader",
                         options: {
-                        sourceMap: true
-                    }
+                        sourceMap: true,
+                        modules: true
+                        }
                     },
 
                     {
