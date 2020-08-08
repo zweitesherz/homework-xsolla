@@ -89,7 +89,8 @@ module.exports = (env, argv) => ({
 
     devServer: {
         port:9000,
-        contentBase:path.join(__dirname, 'dist')
+        contentBase:path.join(__dirname, 'dist'),
+        hot: true
     }
 });
 

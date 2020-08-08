@@ -1,17 +1,21 @@
+
+import { hot } from 'react-hot-loader/root';
+
 import React from 'react';
-
-
-// import style from './styles.css';
 
 import logoSrc from './logo.png';
 
-
-import stLess from './style.less'
+import stLess from './style.less';
 
 function App() {
 
-    return <div className={stLess.message}><img className={stLess.logo} alt="Xsolla2" src={logoSrc}/>Hello Xsolla school!</div>
+    return <div className={stLess.message}>
+        <img className={stLess.logo} alt="Xsolla2" src={logoSrc}/>
+        Hello Xsolla school, hello!
+        <br/>
+        <input/>
+    </div>
 }
 
-export default App;
+export default hot(App);
 
