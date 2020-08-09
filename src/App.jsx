@@ -3,15 +3,9 @@ import { hot } from 'react-hot-loader/root';
 
 import React from 'react';
 
-
-
 import logoSrc from './logo.png';
 
 import stLess from './style.less';
-
-
-
-
 
 function App() {
 
